@@ -24,17 +24,24 @@ Then update via composer
     composer update
 
 
-Usage
------
+Usage examples
+--------------
 
 Remember to add `use VJAndrea\Network;` when you want to use the function provided by this helper.
 
-Example: i want to convert a MAC addres to an integer for easier database storage:
+Example: i want to convert a MAC address to an integer for easier database storage:
 
 ````
 $mac = '01-23-45-67-89-0A';
 
-$ip = Network::mac2long($mac); // $ip value now is 1250999896330
+$long = Network::mac2long($mac); // $long value now is 1250999896330
+````
 
+Example: i want to take a MAC address that i saved as integer in the db and format it properly for the user:
+
+````
+$long = 1250999896330;
+
+$mac = Network::long2mac($long); // $mac value now is '01:23:45:67:89:0A'
 ````
 
