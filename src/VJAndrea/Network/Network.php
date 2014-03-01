@@ -33,6 +33,9 @@ class Network
 	 **/
 	public static function long2mac($long = 0, $separator = ':')
 	{
+		if($long < 0 || $long > 281474976710655) {
+			$long = 0;
+		}
 		return implode($separator, str_split(sprintf('%012s', strtoupper(dechex($long))), 2));
 	}
 } // END class Network
