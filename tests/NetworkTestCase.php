@@ -14,3 +14,6 @@ echo 'Conversion back to MAC: ' . Network::long2mac($long, '-') . "\n";
 echo 'Conversion to colon format: ' . Network::long2mac($long) . "\n";
 
 echo Network::long2mac(Network::mac2long($mac), '-') == $mac ? "Test successful\n" : "Test failed\n";
+
+echo 'MAC is an empty string: ' . Network::mac2long('') . "\n";
+echo 'Long is zero: ' . Network::long2mac(0) . "\n";

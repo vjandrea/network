@@ -17,7 +17,7 @@ class Network
 	 * @return int
 	 * @author Andrea Bergamasco <abergamasco@gmail.com>
 	 **/
-	public static function mac2long($mac, $additional_separators = array())
+	public static function mac2long($mac = '', $additional_separators = array())
 	{
 		$separators = array_merge($additional_separators, [':', '-']);
 		return hexdec(str_replace($separators, '', $mac));
@@ -31,7 +31,7 @@ class Network
 	 * @return string
 	 * @author Andrea Bergamasco <abergamasco@gmail.com>
 	 **/
-	public static function long2mac($long, $separator = ':')
+	public static function long2mac($long = 0, $separator = ':')
 	{
 		return implode($separator, str_split(sprintf('%012s', strtoupper(dechex($long))), 2));
 	}
