@@ -23,5 +23,18 @@ Then update via composer
 
     composer update
 
+
+Usage
+-----
+
 Remember to add `use VJAndrea\Network;` when you want to use the function provided by this helper.
+
+Example: i want to convert a MAC addres to an integer for easier database storage:
+
+````
+$mac = '01-23-45-67-89-0A';
+
+$ip = Network::mac2long($mac); // $ip value now is 1250999896330
+
+````
 

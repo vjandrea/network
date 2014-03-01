@@ -4,7 +4,8 @@ require_once __DIR__ . '/../vendor/autoload.php'; // Autoload files using Compos
 
 use VJAndrea\Network;
 
-$mac = '00-1D-F0-83-4B-29';
+$mac = '01-23-45-67-89-0A';
+
 $long = Network::mac2long($mac);
 
 echo 'Initial MAC: ' . $mac . "\n";
