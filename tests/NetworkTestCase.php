@@ -13,10 +13,10 @@ echo 'Conversion to long: ' . $long . "\n";
 echo 'Conversion back to MAC: ' . Network::long2mac($long, '-') . "\n";
 echo 'Conversion to colon format: ' . Network::long2mac($long) . "\n";
 
-echo Network::long2mac(Network::mac2long($mac), '-') == $mac ? "Test successful\n" : "Test failed\n";
+echo Network::long2mac(Network::mac2long($mac), '-') == $mac ? "Test successful\n" : "TEST FAILED\n";
 
 echo 'MAC is an empty string: ' . Network::mac2long('') . "\n";
 echo 'Long is zero: ' . Network::long2mac(0) . "\n";
 
 echo 'MAC is a fake string: ' . Network::mac2long('Lorem Ipsum') . "\n";
-echo 'Long is an overflow: ' . Network::long2mac(Network::mac2long('FF:FF:FF:FF:FF:FF') + 1) . "\n";
+echo 'Long overflow: ' . Network::long2mac(Network::mac2long('FF:FF:FF:FF:FF:FF') + 1) . "\n";
